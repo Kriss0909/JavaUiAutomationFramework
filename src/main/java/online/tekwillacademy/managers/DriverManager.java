@@ -34,6 +34,7 @@ public class DriverManager {
 
 
         }
+        driver.manage().window().maximize();
     }
     public static DriverManager getInstance(){
         if (instance ==  null){
