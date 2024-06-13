@@ -15,7 +15,11 @@ public class AccountPage extends Page{
     private WebElement logoutBtn;
 
    public void clickOnLogoutButton(){
-       ScrollManager.scrollToElement(logoutBtn);
+       try {
+           ScrollManager.scrollToElement(logoutBtn);
+       } catch (InterruptedException e) {
+           throw new RuntimeException(e);
+       }
        logoutBtn.click();
        System.out.println("The logout btn was clicked");
    }
