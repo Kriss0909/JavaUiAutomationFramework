@@ -26,7 +26,11 @@ public class LoginPage extends Page {
     }
 
     public void clickOnContinueButton() {
-        ScrollManager.scrollToElement(loginButton);
+        try {
+            ScrollManager.scrollToElement(loginButton);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         loginButton.click();
         System.out.println("The login button was clicked");
 

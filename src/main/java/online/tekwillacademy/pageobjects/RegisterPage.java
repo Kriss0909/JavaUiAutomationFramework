@@ -18,7 +18,7 @@ public class RegisterPage extends Page {
     @FindBy(id = "input-lastname")
     private WebElement lastNameInput;
 
-    @FindBy(id = "input-email"=)
+    @FindBy(id = "input-email")
     private WebElement emailInput;
 
     @FindBy(id = "input-password")
@@ -44,7 +44,7 @@ public class RegisterPage extends Page {
         System.out.println("The Privacy Rules are accepted");
     }
 
-    public void clickOnContinueButoon(){
+    public void clickOnContinueButoon() throws InterruptedException {
         ScrollManager.scrollToElement(continueButton);
         continueButton.click();
         System.out.println("The continue button is clicked");

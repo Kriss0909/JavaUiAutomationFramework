@@ -19,19 +19,19 @@ public class TestRunner {
 
         RegisterPage registerPage = new RegisterPage(driver);
         registerPage.clickOnContinueButoon();
-        String randomEmail= DataGeneratorManager.getRandomEmail();
-        registerPage.completeTheRegisterForm("Andrei", "Secu",randomEmail, password:"Password1234!");
+        String randomEmail = DataGeneratorManager.getRandomEmail();
+        String password;
+        registerPage.completeTheRegisterForm("Andrei", "Secu", randomEmail, ("Password1234!"));
         registerPage.enablePrivacyToggle();
         registerPage.clickOnContinueButoon();
-       Thread.sleep(2000);
+        Thread.sleep(2000);
 
         AccountPage accountPage = new AccountPage(driver);
         accountPage.clickOnLogoutButton();
 
         homePage.navigateToLoginPage();
         LoginPage loginPage = new LoginPage(driver);
-        String password;
-        loginPage.completeTheLoginForm(randomEmail,password:"Password1234!");
+        loginPage.completeTheLoginForm( randomEmail, "Password1234!");
         loginPage.clickOnContinueButton();
 
 

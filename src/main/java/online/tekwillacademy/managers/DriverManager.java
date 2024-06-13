@@ -11,21 +11,21 @@ public class DriverManager {
     private static DriverManager instance;
     private WebDriver driver;
 
-    private DriverManager(){
-        switch (webDriverType.toUpperCase()){
+    private DriverManager() {
+        switch (webDriverType.toUpperCase()) {
             case "CHROME":
                 driver = new ChromeDriver();
                 System.out.println("The Chrome Driver was initiated!");
                 break;
-            case"FIREFOX":
+            case "FIREFOX":
                 driver = new FirefoxDriver();
                 System.out.println("The Firefox Driver was initiated!");
                 break;
-                case "SAFARI";
+            case "SAFARI":
                 driver = new SafariDriver();
-                    System.out.println("The Safari Browser was initiated");
-                    break;
-            case"EDGE":
+                System.out.println("The Safari Browser was initiated");
+                break;
+            case "EDGE":
                 driver = new EdgeDriver();
                 System.out.println("The Edge Browser was initiated!");
                 break;
@@ -36,15 +36,16 @@ public class DriverManager {
         }
         driver.manage().window().maximize();
     }
-    public static DriverManager getInstance(){
-        if (instance ==  null){
+
+    public static DriverManager getInstance() {
+        if (instance == null) {
             instance = new DriverManager();
         }
         return instance;
     }
 
     public WebDriver getDriver() {
-        if (driver == null){
+        if (driver == null) {
             getInstance();
         }
         return driver;

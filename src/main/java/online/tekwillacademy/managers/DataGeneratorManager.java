@@ -3,7 +3,7 @@ package online.tekwillacademy.managers;
 import com.github.javafaker.Faker;
 
 public class DataGeneratorManager {
-    private static Faker faker  = new Faker;
+    private static Faker faker  = new Faker();
 
 
     public static String getRandomEmail(){

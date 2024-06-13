@@ -19,7 +19,7 @@ public abstract class Page {
     protected WebElement registerOption;
 
     @FindBy(xpath = "//a[@class=dropdown-item'][normalize-space()='Login']")
-    protected WebElement loginOption
+    protected WebElement loginOption;
 
     public void navigateToRegisterPage() {
         userDropDownIcon.click();
